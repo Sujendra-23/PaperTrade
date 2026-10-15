@@ -1,3 +1,81 @@
+ Image papertrade-test-engine Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 600B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 308B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/golang:1.27-alpine
+#3 ...
+
+#4 [internal] load metadata for docker.io/library/alpine:3.22
+#4 DONE 1.9s
+
+#3 [internal] load metadata for docker.io/library/golang:1.27-alpine
+#3 DONE 3.1s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 47B done
+#5 DONE 0.0s
+
+#6 [build 1/6] FROM docker.io/library/golang:1.27-alpine@sha256:f92b6ef800e499660581efdabdf25d9d817a9d124eaf900924f0504e7e27e12d
+#6 resolve docker.io/library/golang:1.27-alpine@sha256:f92b6ef800e499660581efdabdf25d9d817a9d124eaf900924f0504e7e27e12d done
+#6 DONE 0.0s
+
+#7 [stage-1 1/3] FROM docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#7 resolve docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8 done
+#7 DONE 0.0s
+
+#8 [internal] load build context
+#8 transferring context: 645B done
+#8 DONE 0.0s
+
+#9 [build 6/6] RUN CGO_ENABLED=0 go build -o /engine ./cmd/server
+#9 CACHED
+
+#10 [build 2/6] WORKDIR /app
+#10 CACHED
+
+#11 [build 3/6] COPY go.mod go.sum ./
+#11 CACHED
+
+#12 [stage-1 2/3] RUN adduser -D trader
+#12 CACHED
+
+#13 [build 4/6] RUN go mod download
+#13 CACHED
+
+#14 [build 5/6] COPY . .
+#14 CACHED
+
+#15 [stage-1 3/3] COPY --from=build /engine /engine
+#15 CACHED
+
+#16 exporting to image
+#16 exporting layers done
+#16 exporting manifest sha256:614fae55f2db662f950500389546ab0e9e7b203d3472050b8936ad305a11c930 done
+#16 exporting config sha256:0e2381df5d884b1c47b970c3fbe090a76b283a7a99e7c75f50c8f30be0ddb842 done
+#16 exporting attestation manifest sha256:2cef16ea600a9b4a0420593fb65f7cb55fa5c8354deed52b267ec14f015060a6 done
+#16 exporting manifest list sha256:7c40edb0b4dec1d098d48eb47bdaea5435999946a5818156a71cfb61a718452d done
+#16 naming to docker.io/library/papertrade-test-engine:latest done
+#16 unpacking to docker.io/library/papertrade-test-engine:latest done
+#16 DONE 0.0s
+
+#17 resolving provenance for metadata file
+#17 DONE 0.0s
+ Image papertrade-test-engine Built 
+ Container papertrade-postgres-1 Running 
+ Container papertrade-redis-1 Running 
+ Container papertrade-test-engine-1 Starting 
+ Container papertrade-test-engine-1 Started 
+ Container papertrade-test-engine-1 Waiting 
+ Container papertrade-postgres-1 Waiting 
+ Container papertrade-redis-1 Waiting 
+ Container papertrade-test-engine-1 Healthy 
+ Container papertrade-postgres-1 Healthy 
+ Container papertrade-redis-1 Healthy 
 ============================= test session starts ==============================
 platform darwin -- Python 3.13.9, pytest-9.1.1, pluggy-1.7.0 -- /Users/sujendra/Desktop/Personal - Projects/PaperTrade/api/.venv/bin/python3
 cachedir: .pytest_cache
@@ -7,7 +85,7 @@ testpaths: tests
 plugins: anyio-4.15.1
 collecting ... collected 35 items
 
-tests/test_auth.py::test_signup_logout_login_persists_account INFO:papertrade.trading:Recovered 703 engine commands
+tests/test_auth.py::test_signup_logout_login_persists_account INFO:papertrade.trading:Recovered 855 engine commands
 INFO:httpx:HTTP Request: POST http://testserver/api/auth/signup "HTTP/1.1 201 Created"
 INFO:httpx:HTTP Request: GET http://testserver/api/auth/session "HTTP/1.1 200 OK"
 INFO:httpx:HTTP Request: POST http://testserver/api/auth/logout "HTTP/1.1 200 OK"
@@ -20,7 +98,7 @@ INFO:httpx:HTTP Request: POST http://testserver/api/auth/login "HTTP/1.1 401 Una
 PASSED
 tests/test_auth.py::test_guest_isolation INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
 INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
-INFO:httpx:HTTP Request: GET http://testserver/api/snapshot?account_id=a57f5472-5d07-4b60-adaa-611924465a34 "HTTP/1.1 403 Forbidden"
+INFO:httpx:HTTP Request: GET http://testserver/api/snapshot?account_id=48e32c0e-c6e0-4ace-9b5d-eaf0d4070525 "HTTP/1.1 403 Forbidden"
 INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 403 Forbidden"
 PASSED
 tests/test_auth.py::test_signout_revokes_cookie INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
@@ -40,7 +118,7 @@ INFO:httpx:HTTP Request: GET http://testserver/api/snapshot "HTTP/1.1 401 Unauth
 PASSED
 tests/test_auth.py::test_logged_out_websocket_rejected PASSED
 tests/test_trading.py::test_account_funded INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
-INFO:httpx:HTTP Request: GET http://testserver/api/snapshot?account_id=d8fee445-b4c7-43dc-8ec2-3edfd414f4dd "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/api/snapshot?account_id=5185c24d-2735-4969-94a2-51fad5b5d996 "HTTP/1.1 200 OK"
 PASSED
 tests/test_trading.py::test_limit_requires_price INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
 INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
@@ -66,8 +144,8 @@ PASSED
 tests/test_trading.py::test_position_limit_includes_open_buys INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
 INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
 INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
-INFO:httpx:HTTP Request: GET http://testserver/api/snapshot?account_id=f52f6bcd-a3e7-49b7-add0-9841ac6c328c "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: DELETE http://testserver/api/orders/5af78b5a-7c65-476b-b949-0e21cd4bcab9?account_id=f52f6bcd-a3e7-49b7-add0-9841ac6c328c "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/api/snapshot?account_id=23b33d45-73fb-4d30-9b25-1464c9a6bc3f "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: DELETE http://testserver/api/orders/1051a6f5-32cd-4a02-980f-7b61acb22dec?account_id=23b33d45-73fb-4d30-9b25-1464c9a6bc3f "HTTP/1.1 200 OK"
 PASSED
 tests/test_trading.py::test_idempotent INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
 INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
@@ -79,19 +157,19 @@ INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unproce
 PASSED
 tests/test_trading.py::test_cancel_releases_cash INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
 INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
-INFO:httpx:HTTP Request: GET http://testserver/api/snapshot?account_id=f2eec937-a5ce-4881-b977-8e5f01a04aad "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: DELETE http://testserver/api/orders/9635da8b-2278-40c6-86ea-ad530d6d0929?account_id=f2eec937-a5ce-4881-b977-8e5f01a04aad "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: GET http://testserver/api/snapshot?account_id=f2eec937-a5ce-4881-b977-8e5f01a04aad "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: DELETE http://testserver/api/orders/9635da8b-2278-40c6-86ea-ad530d6d0929?account_id=f2eec937-a5ce-4881-b977-8e5f01a04aad "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/api/snapshot?account_id=3da30381-61f4-458e-8ff7-b38d4e39afdf "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: DELETE http://testserver/api/orders/fb01ce0f-5bf5-4f36-abab-9526b51e7934?account_id=3da30381-61f4-458e-8ff7-b38d4e39afdf "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/api/snapshot?account_id=3da30381-61f4-458e-8ff7-b38d4e39afdf "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: DELETE http://testserver/api/orders/fb01ce0f-5bf5-4f36-abab-9526b51e7934?account_id=3da30381-61f4-458e-8ff7-b38d4e39afdf "HTTP/1.1 200 OK"
 PASSED
 tests/test_trading.py::test_fill_and_balanced_ledger INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
 INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
-INFO:httpx:HTTP Request: GET http://testserver/api/snapshot?account_id=d9d55a02-89f7-475f-ae61-057739fbe030 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/api/snapshot?account_id=54d3674c-0570-409e-9edf-1972c08c575a "HTTP/1.1 200 OK"
 INFO:httpx:HTTP Request: GET http://testserver/api/reconciliation "HTTP/1.1 200 OK"
 PASSED
 tests/test_trading.py::test_market_ioc_releases_remainder INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
 INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
-INFO:httpx:HTTP Request: GET http://testserver/api/snapshot?account_id=740852b9-3fc3-4fd8-a796-9042f4184706 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/api/snapshot?account_id=d6d09729-4d44-4776-a294-408979d8bcc1 "HTTP/1.1 200 OK"
 PASSED
 tests/test_trading.py::test_100_concurrent_never_overspend INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
 INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
@@ -194,47 +272,47 @@ INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unproce
 INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
 INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
 INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
-INFO:httpx:HTTP Request: GET http://testserver/api/snapshot?account_id=667370e6-c412-4538-92ac-c153b7cd577e "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/api/snapshot?account_id=056c4277-adea-4990-9a14-4f6379d9b598 "HTTP/1.1 200 OK"
 INFO:httpx:HTTP Request: GET http://testserver/api/reconciliation "HTTP/1.1 200 OK"
 
 CONCURRENCY: submitted=100 accepted=55 rejected=45 reserved_cents=9922000 available_cents=78000 overspend=0
 PASSED
 tests/test_trading.py::test_engine_restart_replays_open_orders INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
 INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
-INFO:papertrade.trading:Recovered 826 engine commands
-INFO:httpx:HTTP Request: GET http://testserver/api/snapshot?account_id=37facb3e-be1a-4030-8d80-1394c1ae9f31&symbol=NVDA "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: DELETE http://testserver/api/orders/a64767f7-3f93-4799-b850-002928da87b1?account_id=37facb3e-be1a-4030-8d80-1394c1ae9f31 "HTTP/1.1 200 OK"
+INFO:papertrade.trading:Recovered 978 engine commands
+INFO:httpx:HTTP Request: GET http://testserver/api/snapshot?account_id=6b36f5ab-de82-4606-b9aa-f849cee9d3e0&symbol=NVDA "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: DELETE http://testserver/api/orders/33a9977c-d3c5-4317-a69e-ccfd0407edba?account_id=6b36f5ab-de82-4606-b9aa-f849cee9d3e0 "HTTP/1.1 200 OK"
 INFO:httpx:HTTP Request: GET http://testserver/api/reconciliation "HTTP/1.1 200 OK"
 PASSED
 tests/test_trading.py::test_crash_after_engine_before_settlement INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
-INFO:papertrade.trading:Recovered 828 engine commands
+INFO:papertrade.trading:Recovered 980 engine commands
 INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
 INFO:httpx:HTTP Request: GET http://testserver/api/reconciliation "HTTP/1.1 200 OK"
 PASSED
 tests/test_trading.py::test_crash_after_fill_before_settlement INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
-INFO:papertrade.trading:Recovered 831 engine commands
+INFO:papertrade.trading:Recovered 983 engine commands
 INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
-INFO:httpx:HTTP Request: GET http://testserver/api/snapshot?account_id=bc41c4ea-6c9d-4112-843e-a810a1368fa1 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/api/snapshot?account_id=b793726b-069c-4837-9195-baaef9e96d42 "HTTP/1.1 200 OK"
 INFO:httpx:HTTP Request: GET http://testserver/api/reconciliation "HTTP/1.1 200 OK"
 PASSED
 tests/test_trading.py::test_event_cursor INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
 INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
 INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
 INFO:httpx:HTTP Request: GET http://testserver/api/events?limit=2 "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: GET http://testserver/api/events?after=1875&limit=2 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/api/events?after=2221&limit=2 "HTTP/1.1 200 OK"
 PASSED
 tests/test_trading.py::test_websocket_snapshot INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
 PASSED
 tests/test_trading.py::test_no_cross_account_cancel INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
 INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
-INFO:httpx:HTTP Request: DELETE http://testserver/api/orders/a21a09c1-0f4f-40ca-bd7e-8149819ebcef?account_id=demo "HTTP/1.1 403 Forbidden"
+INFO:httpx:HTTP Request: DELETE http://testserver/api/orders/bb570c61-fa8e-4f51-b2e6-ea0af7fd0bdb?account_id=demo "HTTP/1.1 403 Forbidden"
 PASSED
 tests/test_trading.py::test_reconciliation INFO:httpx:HTTP Request: GET http://testserver/api/reconciliation "HTTP/1.1 200 OK"
 PASSED
 tests/test_trading.py::test_partial_fill_cancel_releases_exact_reservation INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
 INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
 INFO:httpx:HTTP Request: GET http://testserver/api/snapshot "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: DELETE http://testserver/api/orders/6e555586-4921-45e6-b6fc-9424a4d3f29e "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: DELETE http://testserver/api/orders/c1bb8e44-acda-45c6-a76f-e5bed6b63f12 "HTTP/1.1 200 OK"
 INFO:httpx:HTTP Request: GET http://testserver/api/snapshot "HTTP/1.1 200 OK"
 INFO:httpx:HTTP Request: GET http://testserver/api/reconciliation "HTTP/1.1 200 OK"
 PASSED
@@ -242,7 +320,7 @@ tests/test_trading.py::test_sell_reservation_prevents_oversell_and_releases INFO
 INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
 INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
 INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
-INFO:httpx:HTTP Request: DELETE http://testserver/api/orders/f7c1e805-2957-41b2-b1f8-ff6be2760ef1 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: DELETE http://testserver/api/orders/46e28846-b21d-45a0-a344-2c99dd942ded "HTTP/1.1 200 OK"
 INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
 INFO:httpx:HTTP Request: GET http://testserver/api/reconciliation "HTTP/1.1 200 OK"
 PASSED
@@ -288,4 +366,4 @@ PASSED
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
 - generated xml file: /Users/sujendra/Desktop/Personal - Projects/PaperTrade/docs/python-tests.xml -
-======================== 35 passed, 1 warning in 2.24s =========================
+======================== 35 passed, 1 warning in 2.43s =========================

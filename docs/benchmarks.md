@@ -38,7 +38,7 @@ The runner pre-generates one million seeded random limit orders in one symbol, r
 
 - `go vet ./...` and `go test -race -count=1 -json ./...` passed: **12 top-level tests**, including **7 matching subtests**. [Raw JSONL](go-tests.jsonl).
 - PostgreSQL and a separate real Go gRPC engine: **35 pytest cases passed**. [JUnit XML](python-tests.xml), [console output](python-test-output.txt).
-- One account started with **10,000,000 cents**. A 100-worker pool submitted **100 BUY orders**, each for **10 shares at 18,040 cents**. **55 were accepted and 45 rejected**. Final cash was **10,000,000 cents**, reservations **9,922,000 cents**, and available cash **78,000 cents**. **No overspend**; ledger and reservations reconciled. This tests reservation contention, not HTTP throughput.
+- One account started with **10,000,000 cents**. A barrier synchronized a 100-worker pool before it submitted **100 BUY orders**, each for **10 shares at 18,040 cents**. **55 were accepted and 45 rejected**. Final cash was **10,000,000 cents**, reservations **9,922,000 cents**, and available cash **78,000 cents**. **No overspend**; ledger and reservations reconciled. This tests reservation contention, not HTTP throughput.
 - Crash-injection tests passed after engine execution and after an actual fill before settlement; restart replay preserved the book and balanced accounting.
 - Browser smoke checks passed against Docker Compose: [browser-smoke.json](browser-smoke.json).
 

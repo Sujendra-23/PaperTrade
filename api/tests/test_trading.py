@@ -1,4 +1,5 @@
 import concurrent.futures
+import threading
 import uuid
 
 import httpx
@@ -126,7 +127,10 @@ def test_market_ioc_releases_remainder(client, account):
 
 
 def test_100_concurrent_never_overspend(client, account):
+    start = threading.Barrier(100)
+
     def submit(_):
+        start.wait(timeout=20)
         return place(client, account, quantity=10, price=18040)
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=100) as pool:
