@@ -1,0 +1,57 @@
+name: CI
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  engine:
+    runs-on: ubuntu-latest
+    defaults:
+      run: {working-directory: engine}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with: {go-version-file: engine/go.mod, cache-dependency-path: engine/go.sum}
+      - run: test -z "$(gofmt -l .)"
+      - run: go vet ./...
+      - run: go test -race -count=1 ./...
+  api:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env: {POSTGRES_USER: papertrade, POSTGRES_PASSWORD: papertrade, POSTGRES_DB: papertrade_test}
+        ports: ["55432:5432"]
+        options: --health-cmd "pg_isready -U papertrade" --health-interval 2s --health-timeout 3s --health-retries 30
+      redis:
+        image: redis:7-alpine
+        ports: ["56379:6379"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with: {go-version-file: engine/go.mod, cache-dependency-path: engine/go.sum}
+      - uses: astral-sh/setup-uv@v6
+        with: {version: "0.11.7", enable-cache: true}
+      - run: uv sync --project api --frozen --python 3.13
+      - run: go build -o /tmp/papertrade-engine ./cmd/server
+        working-directory: engine
+      - run: ENGINE_LISTEN=localhost:50052 /tmp/papertrade-engine > /tmp/engine.log 2>&1 &
+      - run: uv run ruff check papertrade tests && uv run ruff format --check papertrade tests
+        working-directory: api
+      - run: uv run pytest -v --junitxml=test-results.xml
+        working-directory: api
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: {name: python-test-results, path: api/test-results.xml}
+  web:
+    runs-on: ubuntu-latest
+    defaults:
+      run: {working-directory: web}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: "24", cache: npm, cache-dependency-path: web/package-lock.json}
+      - run: npm ci
+      - run: npm run check
+      - run: npm run build

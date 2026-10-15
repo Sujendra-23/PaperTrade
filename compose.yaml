@@ -1,0 +1,54 @@
+name: papertrade
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: papertrade
+      POSTGRES_PASSWORD: papertrade
+      POSTGRES_DB: papertrade
+    ports: ["127.0.0.1:55432:5432"]
+    volumes: ["papertrade-data:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U papertrade"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+  redis:
+    image: redis:7-alpine
+    ports: ["127.0.0.1:56379:6379"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+  engine:
+    build: {context: ./engine}
+    ports: ["127.0.0.1:50051:50051"]
+  test-engine:
+    profiles: ["test"]
+    build: {context: ./engine}
+    ports: ["127.0.0.1:50052:50051"]
+  api:
+    build: {context: ./api}
+    environment:
+      DATABASE_URL: postgresql://papertrade:papertrade@postgres:5432/papertrade
+      REDIS_URL: redis://redis:6379/0
+      ENGINE_ADDRESS: engine:50051
+      SIMULATOR_ENABLED: "true"
+    ports: ["127.0.0.1:8000:8000"]
+    depends_on:
+      postgres: {condition: service_healthy}
+      redis: {condition: service_healthy}
+      engine: {condition: service_started}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health')"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+  web:
+    build: {context: ./web}
+    ports: ["127.0.0.1:5173:80"]
+    depends_on:
+      api: {condition: service_healthy}
+volumes:
+  papertrade-data:
