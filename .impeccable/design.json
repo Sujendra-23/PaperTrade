@@ -1,0 +1,637 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-15T16:36:52.530401+00:00",
+  "title": "Design System: PaperTrade",
+  "extensions": {
+    "colorMeta": {
+      "bg": {
+        "role": "neutral",
+        "displayName": "Bg",
+        "tonalRamp": [
+          "oklch(15% 0.01129 260.65)",
+          "oklch(26% 0.01129 260.65)",
+          "oklch(38% 0.01129 260.65)",
+          "oklch(49% 0.01129 260.65)",
+          "oklch(61% 0.01129 260.65)",
+          "oklch(72% 0.01129 260.65)",
+          "oklch(84% 0.01129 260.65)",
+          "oklch(95% 0.01129 260.65)"
+        ]
+      },
+      "panel": {
+        "role": "neutral",
+        "displayName": "Panel",
+        "tonalRamp": [
+          "oklch(15% 0.01338 258.37)",
+          "oklch(26% 0.01338 258.37)",
+          "oklch(38% 0.01338 258.37)",
+          "oklch(49% 0.01338 258.37)",
+          "oklch(61% 0.01338 258.37)",
+          "oklch(72% 0.01338 258.37)",
+          "oklch(84% 0.01338 258.37)",
+          "oklch(95% 0.01338 258.37)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "tonalRamp": [
+          "oklch(15% 0.01670 255.65)",
+          "oklch(26% 0.01670 255.65)",
+          "oklch(38% 0.01670 255.65)",
+          "oklch(49% 0.01670 255.65)",
+          "oklch(61% 0.01670 255.65)",
+          "oklch(72% 0.01670 255.65)",
+          "oklch(84% 0.01670 255.65)",
+          "oklch(95% 0.01670 255.65)"
+        ]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Text",
+        "tonalRamp": [
+          "oklch(15% 0.00691 247.90)",
+          "oklch(26% 0.00691 247.90)",
+          "oklch(38% 0.00691 247.90)",
+          "oklch(49% 0.00691 247.90)",
+          "oklch(61% 0.00691 247.90)",
+          "oklch(72% 0.00691 247.90)",
+          "oklch(84% 0.00691 247.90)",
+          "oklch(95% 0.00691 247.90)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "tonalRamp": [
+          "oklch(15% 0.02213 254.96)",
+          "oklch(26% 0.02213 254.96)",
+          "oklch(38% 0.02213 254.96)",
+          "oklch(49% 0.02213 254.96)",
+          "oklch(61% 0.02213 254.96)",
+          "oklch(72% 0.02213 254.96)",
+          "oklch(84% 0.02213 254.96)",
+          "oklch(95% 0.02213 254.96)"
+        ]
+      },
+      "green": {
+        "role": "primary",
+        "displayName": "Green",
+        "tonalRamp": [
+          "oklch(15% 0.08714 158.33)",
+          "oklch(26% 0.08714 158.33)",
+          "oklch(38% 0.08714 158.33)",
+          "oklch(49% 0.08714 158.33)",
+          "oklch(61% 0.08714 158.33)",
+          "oklch(72% 0.08714 158.33)",
+          "oklch(84% 0.08714 158.33)",
+          "oklch(95% 0.08714 158.33)"
+        ]
+      },
+      "red": {
+        "role": "secondary",
+        "displayName": "Red",
+        "tonalRamp": [
+          "oklch(15% 0.10095 25.67)",
+          "oklch(26% 0.10095 25.67)",
+          "oklch(38% 0.10095 25.67)",
+          "oklch(49% 0.10095 25.67)",
+          "oklch(61% 0.10095 25.67)",
+          "oklch(72% 0.10095 25.67)",
+          "oklch(84% 0.10095 25.67)",
+          "oklch(95% 0.10095 25.67)"
+        ]
+      },
+      "buy-action": {
+        "role": "primary",
+        "displayName": "Buy Action",
+        "tonalRamp": [
+          "oklch(15% 0.07695 157.80)",
+          "oklch(26% 0.07695 157.80)",
+          "oklch(38% 0.07695 157.80)",
+          "oklch(49% 0.07695 157.80)",
+          "oklch(61% 0.07695 157.80)",
+          "oklch(72% 0.07695 157.80)",
+          "oklch(84% 0.07695 157.80)",
+          "oklch(95% 0.07695 157.80)"
+        ]
+      },
+      "buy-action-hover": {
+        "role": "primary",
+        "displayName": "Buy Action Hover",
+        "tonalRamp": [
+          "oklch(15% 0.06194 157.24)",
+          "oklch(26% 0.06194 157.24)",
+          "oklch(38% 0.06194 157.24)",
+          "oklch(49% 0.06194 157.24)",
+          "oklch(61% 0.06194 157.24)",
+          "oklch(72% 0.06194 157.24)",
+          "oklch(84% 0.06194 157.24)",
+          "oklch(95% 0.06194 157.24)"
+        ]
+      },
+      "buy-action-ink": {
+        "role": "primary",
+        "displayName": "Buy Action Ink",
+        "tonalRamp": [
+          "oklch(15% 0.02676 157.44)",
+          "oklch(26% 0.02676 157.44)",
+          "oklch(38% 0.02676 157.44)",
+          "oklch(49% 0.02676 157.44)",
+          "oklch(61% 0.02676 157.44)",
+          "oklch(72% 0.02676 157.44)",
+          "oklch(84% 0.02676 157.44)",
+          "oklch(95% 0.02676 157.44)"
+        ]
+      },
+      "sell-action": {
+        "role": "secondary",
+        "displayName": "Sell Action",
+        "tonalRamp": [
+          "oklch(15% 0.07708 28.87)",
+          "oklch(26% 0.07708 28.87)",
+          "oklch(38% 0.07708 28.87)",
+          "oklch(49% 0.07708 28.87)",
+          "oklch(61% 0.07708 28.87)",
+          "oklch(72% 0.07708 28.87)",
+          "oklch(84% 0.07708 28.87)",
+          "oklch(95% 0.07708 28.87)"
+        ]
+      },
+      "sell-action-hover": {
+        "role": "secondary",
+        "displayName": "Sell Action Hover",
+        "tonalRamp": [
+          "oklch(15% 0.06015 29.88)",
+          "oklch(26% 0.06015 29.88)",
+          "oklch(38% 0.06015 29.88)",
+          "oklch(49% 0.06015 29.88)",
+          "oklch(61% 0.06015 29.88)",
+          "oklch(72% 0.06015 29.88)",
+          "oklch(84% 0.06015 29.88)",
+          "oklch(95% 0.06015 29.88)"
+        ]
+      },
+      "sell-action-ink": {
+        "role": "secondary",
+        "displayName": "Sell Action Ink",
+        "tonalRamp": [
+          "oklch(15% 0.03578 30.88)",
+          "oklch(26% 0.03578 30.88)",
+          "oklch(38% 0.03578 30.88)",
+          "oklch(49% 0.03578 30.88)",
+          "oklch(61% 0.03578 30.88)",
+          "oklch(72% 0.03578 30.88)",
+          "oklch(84% 0.03578 30.88)",
+          "oklch(95% 0.03578 30.88)"
+        ]
+      },
+      "field": {
+        "role": "neutral",
+        "displayName": "Field",
+        "tonalRamp": [
+          "oklch(15% 0.01437 253.17)",
+          "oklch(26% 0.01437 253.17)",
+          "oklch(38% 0.01437 253.17)",
+          "oklch(49% 0.01437 253.17)",
+          "oklch(61% 0.01437 253.17)",
+          "oklch(72% 0.01437 253.17)",
+          "oklch(84% 0.01437 253.17)",
+          "oklch(95% 0.01437 253.17)"
+        ]
+      },
+      "field-line": {
+        "role": "neutral",
+        "displayName": "Field Line",
+        "tonalRamp": [
+          "oklch(15% 0.02053 245.58)",
+          "oklch(26% 0.02053 245.58)",
+          "oklch(38% 0.02053 245.58)",
+          "oklch(49% 0.02053 245.58)",
+          "oklch(61% 0.02053 245.58)",
+          "oklch(72% 0.02053 245.58)",
+          "oklch(84% 0.02053 245.58)",
+          "oklch(95% 0.02053 245.58)"
+        ]
+      },
+      "field-focus": {
+        "role": "neutral",
+        "displayName": "Field Focus",
+        "tonalRamp": [
+          "oklch(15% 0.05598 154.86)",
+          "oklch(26% 0.05598 154.86)",
+          "oklch(38% 0.05598 154.86)",
+          "oklch(49% 0.05598 154.86)",
+          "oklch(61% 0.05598 154.86)",
+          "oklch(72% 0.05598 154.86)",
+          "oklch(84% 0.05598 154.86)",
+          "oklch(95% 0.05598 154.86)"
+        ]
+      },
+      "picked-field": {
+        "role": "neutral",
+        "displayName": "Picked Field",
+        "tonalRamp": [
+          "oklch(15% 0.02885 162.22)",
+          "oklch(26% 0.02885 162.22)",
+          "oklch(38% 0.02885 162.22)",
+          "oklch(49% 0.02885 162.22)",
+          "oklch(61% 0.02885 162.22)",
+          "oklch(72% 0.02885 162.22)",
+          "oklch(84% 0.02885 162.22)",
+          "oklch(95% 0.02885 162.22)"
+        ]
+      },
+      "selected-instrument": {
+        "role": "neutral",
+        "displayName": "Selected Instrument",
+        "tonalRamp": [
+          "oklch(15% 0.01353 229.52)",
+          "oklch(26% 0.01353 229.52)",
+          "oklch(38% 0.01353 229.52)",
+          "oklch(49% 0.01353 229.52)",
+          "oklch(61% 0.01353 229.52)",
+          "oklch(72% 0.01353 229.52)",
+          "oklch(84% 0.01353 229.52)",
+          "oklch(95% 0.01353 229.52)"
+        ]
+      },
+      "selected-instrument-line": {
+        "role": "neutral",
+        "displayName": "Selected Instrument Line",
+        "tonalRamp": [
+          "oklch(15% 0.01721 202.17)",
+          "oklch(26% 0.01721 202.17)",
+          "oklch(38% 0.01721 202.17)",
+          "oklch(49% 0.01721 202.17)",
+          "oklch(61% 0.01721 202.17)",
+          "oklch(72% 0.01721 202.17)",
+          "oklch(84% 0.01721 202.17)",
+          "oklch(95% 0.01721 202.17)"
+        ]
+      },
+      "auth-bg": {
+        "role": "neutral",
+        "displayName": "Auth Bg",
+        "tonalRamp": [
+          "oklch(15% 0.01270 248.47)",
+          "oklch(26% 0.01270 248.47)",
+          "oklch(38% 0.01270 248.47)",
+          "oklch(49% 0.01270 248.47)",
+          "oklch(61% 0.01270 248.47)",
+          "oklch(72% 0.01270 248.47)",
+          "oklch(84% 0.01270 248.47)",
+          "oklch(95% 0.01270 248.47)"
+        ]
+      },
+      "auth-panel": {
+        "role": "neutral",
+        "displayName": "Auth Panel",
+        "tonalRamp": [
+          "oklch(15% 0.01835 251.97)",
+          "oklch(26% 0.01835 251.97)",
+          "oklch(38% 0.01835 251.97)",
+          "oklch(49% 0.01835 251.97)",
+          "oklch(61% 0.01835 251.97)",
+          "oklch(72% 0.01835 251.97)",
+          "oklch(84% 0.01835 251.97)",
+          "oklch(95% 0.01835 251.97)"
+        ]
+      },
+      "auth-field": {
+        "role": "neutral",
+        "displayName": "Auth Field",
+        "tonalRamp": [
+          "oklch(15% 0.01663 252.52)",
+          "oklch(26% 0.01663 252.52)",
+          "oklch(38% 0.01663 252.52)",
+          "oklch(49% 0.01663 252.52)",
+          "oklch(61% 0.01663 252.52)",
+          "oklch(72% 0.01663 252.52)",
+          "oklch(84% 0.01663 252.52)",
+          "oklch(95% 0.01663 252.52)"
+        ]
+      },
+      "auth-line": {
+        "role": "neutral",
+        "displayName": "Auth Line",
+        "tonalRamp": [
+          "oklch(15% 0.02189 248.44)",
+          "oklch(26% 0.02189 248.44)",
+          "oklch(38% 0.02189 248.44)",
+          "oklch(49% 0.02189 248.44)",
+          "oklch(61% 0.02189 248.44)",
+          "oklch(72% 0.02189 248.44)",
+          "oklch(84% 0.02189 248.44)",
+          "oklch(95% 0.02189 248.44)"
+        ]
+      },
+      "chart-positive": {
+        "role": "primary",
+        "displayName": "Chart Positive",
+        "tonalRamp": [
+          "oklch(15% 0.08821 158.58)",
+          "oklch(26% 0.08821 158.58)",
+          "oklch(38% 0.08821 158.58)",
+          "oklch(49% 0.08821 158.58)",
+          "oklch(61% 0.08821 158.58)",
+          "oklch(72% 0.08821 158.58)",
+          "oklch(84% 0.08821 158.58)",
+          "oklch(95% 0.08821 158.58)"
+        ]
+      },
+      "chart-negative": {
+        "role": "secondary",
+        "displayName": "Chart Negative",
+        "tonalRamp": [
+          "oklch(15% 0.10495 26.27)",
+          "oklch(26% 0.10495 26.27)",
+          "oklch(38% 0.10495 26.27)",
+          "oklch(49% 0.10495 26.27)",
+          "oklch(61% 0.10495 26.27)",
+          "oklch(72% 0.10495 26.27)",
+          "oklch(84% 0.10495 26.27)",
+          "oklch(95% 0.10495 26.27)"
+        ]
+      },
+      "chart-grid": {
+        "role": "neutral",
+        "displayName": "Chart Grid",
+        "tonalRamp": [
+          "oklch(15% 0.01537 252.36)",
+          "oklch(26% 0.01537 252.36)",
+          "oklch(38% 0.01537 252.36)",
+          "oklch(49% 0.01537 252.36)",
+          "oklch(61% 0.01537 252.36)",
+          "oklch(72% 0.01537 252.36)",
+          "oklch(84% 0.01537 252.36)",
+          "oklch(95% 0.01537 252.36)"
+        ]
+      },
+      "warning": {
+        "role": "tertiary",
+        "displayName": "Warning",
+        "tonalRamp": [
+          "oklch(15% 0.07624 82.29)",
+          "oklch(26% 0.07624 82.29)",
+          "oklch(38% 0.07624 82.29)",
+          "oklch(49% 0.07624 82.29)",
+          "oklch(61% 0.07624 82.29)",
+          "oklch(72% 0.07624 82.29)",
+          "oklch(84% 0.07624 82.29)",
+          "oklch(95% 0.07624 82.29)"
+        ]
+      },
+      "warning-bg": {
+        "role": "tertiary",
+        "displayName": "Warning Bg",
+        "tonalRamp": [
+          "oklch(15% 0.02282 81.00)",
+          "oklch(26% 0.02282 81.00)",
+          "oklch(38% 0.02282 81.00)",
+          "oklch(49% 0.02282 81.00)",
+          "oklch(61% 0.02282 81.00)",
+          "oklch(72% 0.02282 81.00)",
+          "oklch(84% 0.02282 81.00)",
+          "oklch(95% 0.02282 81.00)"
+        ]
+      },
+      "warning-line": {
+        "role": "tertiary",
+        "displayName": "Warning Line",
+        "tonalRamp": [
+          "oklch(15% 0.03957 86.10)",
+          "oklch(26% 0.03957 86.10)",
+          "oklch(38% 0.03957 86.10)",
+          "oklch(49% 0.03957 86.10)",
+          "oklch(61% 0.03957 86.10)",
+          "oklch(72% 0.03957 86.10)",
+          "oklch(84% 0.03957 86.10)",
+          "oklch(95% 0.03957 86.10)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Sign-in headline."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Workspace page heading."
+      },
+      "price": {
+        "displayName": "Price",
+        "purpose": "Main quoted price or equity, with tabular numerals."
+      },
+      "metric": {
+        "displayName": "Metric",
+        "purpose": "Account strip figures, with tabular numerals."
+      },
+      "instrument-title": {
+        "displayName": "Instrument Title",
+        "purpose": "Chart instrument identity."
+      },
+      "panel-title": {
+        "displayName": "Panel Title",
+        "purpose": "Compact working panel headings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Root reading role."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Dense field and summary labels."
+      },
+      "number": {
+        "displayName": "Number",
+        "purpose": "Market values and table data."
+      },
+      "field-number": {
+        "displayName": "Field Number",
+        "purpose": "Quantity and limit-price entry."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "button-state",
+        "value": "background-color 0.15s, color 0.15s",
+        "purpose": "Button hover and selection color changes."
+      },
+      {
+        "name": "price-border",
+        "value": "border-color 0.2s",
+        "purpose": "Limit-price focus and picked-price border."
+      },
+      {
+        "name": "depth-picked-duration",
+        "value": "900ms",
+        "purpose": "Visible ticket acknowledgement after selecting book depth."
+      },
+      {
+        "name": "loading-spin",
+        "value": "spin 1s linear infinite",
+        "purpose": "Loading icons only; disabled under reduced motion."
+      },
+      {
+        "name": "chart-animation",
+        "value": "none",
+        "purpose": "Trace updates remain unanimated."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation: none !important; transition: none !important; scroll-behavior: auto !important",
+        "purpose": "Applied globally when prefers-reduced-motion is reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide",
+        "value": "min-width: 1600px"
+      },
+      {
+        "name": "compact-desktop",
+        "value": "max-width: 1250px"
+      },
+      {
+        "name": "instrument-strip",
+        "value": "max-width: 900px"
+      },
+      {
+        "name": "single-column",
+        "value": "max-width: 640px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Buy AAPL action",
+      "kind": "button",
+      "refersTo": "button-buy",
+      "description": "Full-width ticket submission in the selected order side.",
+      "html": "<button class=\"ds-buy\">Buy AAPL</button>",
+      "css": ".ds-buy{font-family:\"DM Sans Variable\",sans-serif;font-size:13px;color:#e7ebef;background:#a3ddba;color:#16251c;border:0;border-radius:4px;width:100%;height:38px;font-size:11px;font-weight:600;cursor:pointer;transition:background-color .15s,color .15s;}.ds-buy:hover{background:#bbe9cc;color:#16251c;}.ds-buy:focus-visible{outline:2px solid var(--green,#9addb6);outline-offset:4px;}.ds-buy:disabled{opacity:.55;cursor:wait}@media(max-width:640px){.ds-buy{height:43px;font-size:12px}}@media(prefers-reduced-motion:reduce){.ds-primary,.ds-buy,.ds-sell,.ds-guest,.ds-price{transition:none}}"
+    },
+    {
+      "name": "Sell AAPL action",
+      "kind": "button",
+      "refersTo": "button-sell",
+      "description": "Full-width ticket submission in the selected order side.",
+      "html": "<button class=\"ds-sell\">Sell AAPL</button>",
+      "css": ".ds-sell{font-family:\"DM Sans Variable\",sans-serif;font-size:13px;color:#e7ebef;background:#edada3;color:#331d19;border:0;border-radius:4px;width:100%;height:38px;font-size:11px;font-weight:600;cursor:pointer;transition:background-color .15s,color .15s;}.ds-sell:hover{background:#f5c2b9;color:#331d19;}.ds-sell:focus-visible{outline:2px solid var(--green,#9addb6);outline-offset:4px;}.ds-sell:disabled{opacity:.55;cursor:wait}@media(max-width:640px){.ds-sell{height:43px;font-size:12px}}@media(prefers-reduced-motion:reduce){.ds-primary,.ds-buy,.ds-sell,.ds-guest,.ds-price{transition:none}}"
+    },
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Auth and guide action using the filled practice-green style.",
+      "html": "<button class=\"ds-primary\">Sign in <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></button>",
+      "css": ".ds-primary{font-family:\"DM Sans Variable\",sans-serif;font-size:13px;color:#e7ebef;background:#a3ddba;color:#16251c;border:0;border-radius:5px;padding:12px 15px;width:100%;display:flex;align-items:center;justify-content:center;gap:12px;font-size:12px;font-weight:600;cursor:pointer;transition:background-color .15s,color .15s;}.ds-primary:hover{background:#bdeacc;color:#152c1d}.ds-primary:focus-visible{outline:2px solid var(--green,#9addb6);outline-offset:4px;}.ds-primary:disabled{opacity:.55;cursor:wait}@media(prefers-reduced-motion:reduce){.ds-primary,.ds-buy,.ds-sell,.ds-guest,.ds-price{transition:none}}"
+    },
+    {
+      "name": "Guest action",
+      "kind": "button",
+      "refersTo": "button-guest",
+      "description": "Outlined alternative below the sign-in divider.",
+      "html": "<button class=\"ds-guest\">Start a practice session <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"m9 6 6 6-6 6\"/></svg></button>",
+      "css": ".ds-guest{font-family:\"DM Sans Variable\",sans-serif;font-size:13px;color:#e7ebef;width:100%;border:1px solid #56636f;border-radius:5px;height:43px;background:transparent;display:flex;align-items:center;justify-content:center;gap:12px;font-size:12px;cursor:pointer;transition:background-color .15s,color .15s;}.ds-guest:hover{background:#2a343e;color:#fff}.ds-guest:focus-visible{outline:2px solid var(--green,#9addb6);outline-offset:4px;}.ds-guest:disabled{opacity:.55;cursor:wait}@media(prefers-reduced-motion:reduce){.ds-primary,.ds-buy,.ds-sell,.ds-guest,.ds-price{transition:none}}"
+    },
+    {
+      "name": "Limit-price field",
+      "kind": "input",
+      "refersTo": "price-field",
+      "description": "Recessed mono price entry; add ds-picked to preview depth selection.",
+      "html": "<label class=\"ds-field-label\" for=\"ds-limit\">Limit price <span>USD</span></label><div class=\"ds-price\"><span>$</span><input id=\"ds-limit\" type=\"number\" min=\"0.01\" step=\"0.01\" value=\"188.20\"/><span>USD</span></div>",
+      "css": ".ds-field-label{font-family:\"DM Sans Variable\",sans-serif;font-size:13px;color:#e7ebef;display:flex;justify-content:space-between;font-size:10px;color:#c0c9d2;margin-bottom:8px}.ds-field-label span{font:9px var(--mono,\"IBM Plex Mono\",monospace);color:var(--muted,#98a2af)}.ds-price{display:flex;align-items:center;height:39px;background:#11161c;border:1px solid #343e47;border-radius:4px;padding:0 12px;transition:border-color .2s;color:#e7ebef}.ds-price:focus-within{border-color:#86ac92}.ds-price.ds-picked{border-color:var(--green,#9addb6);background:#1f3128}.ds-price>span{font:11px var(--mono,\"IBM Plex Mono\",monospace);color:#aab5be}.ds-price>span:last-child{font-size:9px}.ds-price input{min-width:0;width:100%;background:none;border:0;color:inherit;font:12px var(--mono,\"IBM Plex Mono\",monospace);padding:8px;appearance:textfield;caret-color:var(--green,#9addb6)}.ds-price input:focus{outline:none}.ds-price input::-webkit-inner-spin-button{appearance:none}@media(max-width:640px){.ds-price{height:43px}}@media(prefers-reduced-motion:reduce){.ds-primary,.ds-buy,.ds-sell,.ds-guest,.ds-price{transition:none}}"
+    },
+    {
+      "name": "Workspace navigation",
+      "kind": "nav",
+      "refersTo": "nav-item-active",
+      "description": "Icon and label tabs with a green active underline.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Workspace\"><button class=\"ds-active\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z\"/></svg>Trade</button><button>Portfolio</button><button>Activity</button></nav>",
+      "css": ".ds-nav{font-family:\"DM Sans Variable\",sans-serif;font-size:13px;color:#e7ebef;display:flex;height:64px;gap:28px;background:#15191e}.ds-nav button{font:12px \"DM Sans Variable\",sans-serif;position:relative;display:flex;align-items:center;gap:8px;padding:0 2px;color:#99a4b0;background:none;border:0;cursor:pointer}.ds-nav button:hover{color:#fff}.ds-nav .ds-active{color:#e9eff2}.ds-nav .ds-active:after{position:absolute;content:\"\";height:2px;bottom:0;left:0;right:0;background:var(--green,#9addb6)}.ds-nav button:focus-visible{outline:2px solid var(--green,#9addb6);outline-offset:4px;}"
+    },
+    {
+      "name": "Order status",
+      "kind": "chip",
+      "refersTo": "status-open",
+      "description": "Small textual status tags keep lifecycle states explicit.",
+      "html": "<div class=\"ds-statuses\"><span class=\"ds-status ds-open\">Open</span><span class=\"ds-status ds-filled\">Filled</span><span class=\"ds-status\">Cancelled</span></div>",
+      "css": ".ds-statuses{display:flex;gap:8px}.ds-status{font:9px \"DM Sans Variable\",sans-serif;padding:3px 5px;border-radius:3px;background:#29313a;color:#c5cfd9}.ds-status.ds-open{background:#293b38;color:#afd5c1}.ds-status.ds-filled{background:#293e30;color:#bce4c9}"
+    },
+    {
+      "name": "Working panel",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Bordered working surface with a compact heading and interior context.",
+      "html": "<section class=\"ds-panel\"><header class=\"ds-panel-heading\"><h2>Recent trades</h2><span>AAPL</span></header><p class=\"ds-empty\">Waiting for executed trades.</p></section>",
+      "css": ".ds-panel{font-family:\"DM Sans Variable\",sans-serif;font-size:13px;color:#e7ebef;background:var(--panel,#15191f);border:1px solid var(--line,#2a3038);border-radius:7px;overflow:hidden;min-width:0}.ds-panel-heading{display:flex;align-items:center;justify-content:space-between;height:49px;padding:0 15px;gap:10px;border-bottom:1px solid var(--line,#2a3038)}.ds-panel-heading h2{font-size:12px;font-weight:550;letter-spacing:-.01em;margin:0}.ds-panel-heading>span{font:9px var(--mono,\"IBM Plex Mono\",monospace);color:var(--muted,#98a2af)}.ds-empty{font-size:10px;color:var(--muted,#98a2af);padding:16px 12px;min-height:80px;margin:0}"
+    },
+    {
+      "name": "Depth level",
+      "kind": "custom",
+      "refersTo": "depth-row",
+      "description": "An actionable price row with a right-aligned proportional liquidity bar.",
+      "html": "<button class=\"ds-depth\" aria-label=\"Use bid price $188.20\"><span>188.20</span><span>66</span><span>12,421</span></button>",
+      "css": ".ds-depth{position:relative;display:grid;grid-template-columns:1.2fr .7fr 1fr;align-items:center;gap:6px;width:100%;height:22px;padding:0 12px;background:transparent;border:0;color:#e7ebef;font:10px var(--mono,\"IBM Plex Mono\",monospace);text-align:right;cursor:pointer;transition:background-color .15s,color .15s}.ds-depth:before{content:\"\";position:absolute;inset:1px 0 1px auto;width:40%;pointer-events:none;background:#37734f30}.ds-depth>span{position:relative}.ds-depth>span:first-child{text-align:left;color:var(--green,#9addb6)}.ds-depth>span:last-child{color:#b2bdc7}.ds-depth:hover{background:#35403f65}.ds-depth:focus-visible{outline:2px solid var(--green,#9addb6);outline-offset:4px;}@media(max-width:640px){.ds-depth{height:25px;font-size:11px}}@media(prefers-reduced-motion:reduce){.ds-depth{transition:none}}"
+    },
+    {
+      "name": "Selected watch instrument",
+      "kind": "custom",
+      "refersTo": "watch-item-selected",
+      "description": "Selected watch row with a graphite-green fill and precise edge marker.",
+      "html": "<button class=\"ds-watch\" aria-pressed=\"true\"><span class=\"ds-ticker\">A</span><span class=\"ds-instrument\"><strong>AAPL</strong><small>Apple</small></span><span class=\"ds-quote\"><strong>188.28</strong><small>-0.82%</small></span><span class=\"ds-marker\"></span></button>",
+      "css": ".ds-watch{font-family:\"DM Sans Variable\",sans-serif;font-size:13px;color:#e7ebef;width:100%;display:flex;align-items:center;gap:9px;text-align:left;padding:14px 16px;position:relative;border:1px solid #2e3b3c;border-inline:0;background:#20282c;cursor:pointer}.ds-watch:hover{background:#20282c;color:#fff}.ds-watch:focus-visible{outline:2px solid var(--green,#9addb6);outline-offset:4px;}.ds-ticker{width:29px;height:29px;border-radius:7px;display:grid;place-items:center;font-weight:650;font-size:15px;background:#34383b;color:#e7e8e6}.ds-instrument{display:flex;flex-direction:column;gap:5px}.ds-instrument strong{font-size:11px;font-weight:600;letter-spacing:.03em}.ds-instrument small{font-size:10px;color:var(--muted,#98a2af)}.ds-quote{display:flex;flex-direction:column;gap:5px;margin-left:auto;align-items:flex-end;font:10px var(--mono,\"IBM Plex Mono\",monospace)}.ds-quote strong{font-weight:400}.ds-quote small{font-size:9px;color:var(--red,#ee9b93)}.ds-marker{position:absolute;left:0;top:21px;width:2px;height:22px;background:var(--green,#9addb6)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Market operations console",
+    "overview": "The market operations console is a quiet analytical workspace: blue graphite surfaces, a restrained green/coral vocabulary, and dense, aligned numbers. Price and account figures carry the hierarchy; panel headings and chrome stay compact. The sign-in surface opens the same world with a larger, lighter headline and a simple two-column invitation.\n\nFlat panels, fine slate borders, and small changes in surface tone separate the work. Data updates preserve their positions. Illustration, photography, and ornamental motion do not form part of the implemented system.",
+    "keyCharacteristics": [
+      "Graphite surfaces with semantic green and coral.",
+      "Humanist labels paired with monospaced market detail.",
+      "Flat, lightly rounded panels with aligned, compact data.",
+      "Stable live updates and a visible depth-to-ticket acknowledgement."
+    ],
+    "rules": [
+      {
+        "name": "The Semantic Accent Rule",
+        "body": "Green identifies buys, positive direction, success, and focused action; coral identifies sells, negative direction, and errors. Most of the workspace remains graphite and neutral.",
+        "section": "colors"
+      },
+      {
+        "name": "The Number Alignment Rule",
+        "body": "Use IBM Plex Mono for compact trading data and tabular numerals for large account and price figures. Keep the humanist sans for labels and explanatory copy.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Surface Rule",
+        "body": "Separate panels with tone and a single slate border. No box shadows are present in the shipped system.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Stable Market Rule",
+        "body": "Live updates replace values without animating the chart trace or rearranging the surrounding interface. A picked depth price is acknowledged in the ticket rather than by moving the market.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do reserve green and coral for order side, direction, feedback, and actionable emphasis.",
+      "Do keep price, size, totals, and timestamps aligned with monospaced numerals; keep large figures tabular.",
+      "Do preserve the depth-to-ticket price transfer and its brief visible acknowledgement.",
+      "Do let the instrument strip and data tables scroll horizontally within their own containers.",
+      "Do retain simulation context, labels, and explicit empty, connection, and order outcomes.",
+      "Do suppress animations and transitions when reduced motion is requested."
+    ],
+    "donts": [
+      "Don't add shadows to the flat panel vocabulary.",
+      "Don't animate the chart trace or apply positional animation to live market updates.",
+      "Don't turn the compact workspace into oversized promotional cards.",
+      "Don't replace the restrained green/coral semantics with arbitrary decorative accents.",
+      "Don't add an eyebrow above the sign-in headline; the implemented hierarchy starts with the headline."
+    ]
+  }
+}
