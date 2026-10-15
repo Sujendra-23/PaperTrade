@@ -1258,9 +1258,6 @@ function Auth({ onUser }: { onUser: (u: User) => void }) {
       </a>
       <div className="auth-layout">
         <div className="auth-intro">
-          <span className="auth-market">
-            <i />A simulated market. A working exchange.
-          </span>
           <h1>
             Build conviction.
             <br />

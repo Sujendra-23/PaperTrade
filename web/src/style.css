@@ -224,8 +224,7 @@ h3 {
   gap: 6px;
 }
 .connection i,
-.live-dot,
-.auth-market i {
+.live-dot {
   width: 6px;
   height: 6px;
   background: #aeb7c1;
@@ -233,8 +232,7 @@ h3 {
   display: inline-block;
 }
 .connection.online i,
-.live-dot,
-.auth-market i {
+.live-dot {
   background: var(--green);
 }
 .icon-button {
@@ -1429,13 +1427,6 @@ td:first-child {
 }
 .auth-intro {
   padding-top: 33px;
-}
-.auth-market {
-  font-size: 11px;
-  display: flex;
-  gap: 7px;
-  align-items: center;
-  color: #b3c4ba;
 }
 .auth-intro h1 {
   font-size: 64px;
