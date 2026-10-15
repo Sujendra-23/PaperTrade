@@ -1,0 +1,93 @@
+{"Time":"2026-10-15T09:26:17.429755-07:00","Action":"start","Package":"github.com/Sujendra-23/PaperTrade/engine/book"}
+{"Time":"2026-10-15T09:26:17.429894-07:00","Action":"start","Package":"github.com/Sujendra-23/PaperTrade/engine/cmd/bench"}
+{"Time":"2026-10-15T09:26:17.429918-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/cmd/bench","Output":"?   \tgithub.com/Sujendra-23/PaperTrade/engine/cmd/bench\t[no test files]\n"}
+{"Time":"2026-10-15T09:26:17.42994-07:00","Action":"skip","Package":"github.com/Sujendra-23/PaperTrade/engine/cmd/bench","Elapsed":0}
+{"Time":"2026-10-15T09:26:17.429956-07:00","Action":"start","Package":"github.com/Sujendra-23/PaperTrade/engine/cmd/server"}
+{"Time":"2026-10-15T09:26:17.429973-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/cmd/server","Output":"?   \tgithub.com/Sujendra-23/PaperTrade/engine/cmd/server\t[no test files]\n"}
+{"Time":"2026-10-15T09:26:17.429982-07:00","Action":"skip","Package":"github.com/Sujendra-23/PaperTrade/engine/cmd/server","Elapsed":0}
+{"Time":"2026-10-15T09:26:17.42999-07:00","Action":"start","Package":"github.com/Sujendra-23/PaperTrade/engine/pb"}
+{"Time":"2026-10-15T09:26:17.429995-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/pb","Output":"?   \tgithub.com/Sujendra-23/PaperTrade/engine/pb\t[no test files]\n"}
+{"Time":"2026-10-15T09:26:17.430003-07:00","Action":"skip","Package":"github.com/Sujendra-23/PaperTrade/engine/pb","Elapsed":0}
+{"Time":"2026-10-15T09:26:17.833975-07:00","Action":"start","Package":"github.com/Sujendra-23/PaperTrade/engine/service"}
+{"Time":"2026-10-15T09:26:17.95227-07:00","Action":"run","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching"}
+{"Time":"2026-10-15T09:26:17.952339-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching","Output":"=== RUN   TestMatching\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:17.952354-07:00","Action":"run","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching/best_ask_first"}
+{"Time":"2026-10-15T09:26:17.952363-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching/best_ask_first","Output":"=== RUN   TestMatching/best_ask_first\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:17.95237-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching/best_ask_first","Output":"--- PASS: TestMatching/best_ask_first (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:17.952376-07:00","Action":"pass","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching/best_ask_first","Elapsed":0}
+{"Time":"2026-10-15T09:26:17.952385-07:00","Action":"run","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching/best_bid_first"}
+{"Time":"2026-10-15T09:26:17.952388-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching/best_bid_first","Output":"=== RUN   TestMatching/best_bid_first\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:17.95246-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching/best_bid_first","Output":"--- PASS: TestMatching/best_bid_first (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:17.952469-07:00","Action":"pass","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching/best_bid_first","Elapsed":0}
+{"Time":"2026-10-15T09:26:17.952483-07:00","Action":"run","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching/fifo"}
+{"Time":"2026-10-15T09:26:17.952497-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching/fifo","Output":"=== RUN   TestMatching/fifo\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:17.952566-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching/fifo","Output":"--- PASS: TestMatching/fifo (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:17.952582-07:00","Action":"pass","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching/fifo","Elapsed":0}
+{"Time":"2026-10-15T09:26:17.952603-07:00","Action":"run","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching/partial_rests"}
+{"Time":"2026-10-15T09:26:17.952616-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching/partial_rests","Output":"=== RUN   TestMatching/partial_rests\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:17.952649-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching/partial_rests","Output":"--- PASS: TestMatching/partial_rests (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:17.952657-07:00","Action":"pass","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching/partial_rests","Elapsed":0}
+{"Time":"2026-10-15T09:26:17.952674-07:00","Action":"run","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching/uncrossed"}
+{"Time":"2026-10-15T09:26:17.952679-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching/uncrossed","Output":"=== RUN   TestMatching/uncrossed\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:17.952708-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching/uncrossed","Output":"--- PASS: TestMatching/uncrossed (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:17.952718-07:00","Action":"pass","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching/uncrossed","Elapsed":0}
+{"Time":"2026-10-15T09:26:17.952723-07:00","Action":"run","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching/market_ioc"}
+{"Time":"2026-10-15T09:26:17.952727-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching/market_ioc","Output":"=== RUN   TestMatching/market_ioc\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:17.952754-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching/market_ioc","Output":"--- PASS: TestMatching/market_ioc (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:17.95276-07:00","Action":"pass","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching/market_ioc","Elapsed":0}
+{"Time":"2026-10-15T09:26:17.952771-07:00","Action":"run","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching/market_collar"}
+{"Time":"2026-10-15T09:26:17.952776-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching/market_collar","Output":"=== RUN   TestMatching/market_collar\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:17.952802-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching/market_collar","Output":"--- PASS: TestMatching/market_collar (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:17.952807-07:00","Action":"pass","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching/market_collar","Elapsed":0}
+{"Time":"2026-10-15T09:26:17.952824-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching","Output":"--- PASS: TestMatching (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:17.952828-07:00","Action":"pass","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestMatching","Elapsed":0}
+{"Time":"2026-10-15T09:26:17.952839-07:00","Action":"run","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestCancel"}
+{"Time":"2026-10-15T09:26:17.952844-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestCancel","Output":"=== RUN   TestCancel\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:17.952872-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestCancel","Output":"--- PASS: TestCancel (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:17.952884-07:00","Action":"pass","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestCancel","Elapsed":0}
+{"Time":"2026-10-15T09:26:17.952888-07:00","Action":"run","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestDuplicate"}
+{"Time":"2026-10-15T09:26:17.952891-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestDuplicate","Output":"=== RUN   TestDuplicate\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:17.95291-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestDuplicate","Output":"--- PASS: TestDuplicate (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:17.952915-07:00","Action":"pass","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestDuplicate","Elapsed":0}
+{"Time":"2026-10-15T09:26:17.952923-07:00","Action":"run","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestInvalid"}
+{"Time":"2026-10-15T09:26:17.952926-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestInvalid","Output":"=== RUN   TestInvalid\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:17.95295-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestInvalid","Output":"--- PASS: TestInvalid (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:17.952955-07:00","Action":"pass","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestInvalid","Elapsed":0}
+{"Time":"2026-10-15T09:26:17.952964-07:00","Action":"run","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestSymbolIsolation"}
+{"Time":"2026-10-15T09:26:17.952968-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestSymbolIsolation","Output":"=== RUN   TestSymbolIsolation\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:17.952991-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestSymbolIsolation","Output":"--- PASS: TestSymbolIsolation (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:17.952997-07:00","Action":"pass","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestSymbolIsolation","Elapsed":0}
+{"Time":"2026-10-15T09:26:17.953007-07:00","Action":"run","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestSelfTradePrevention"}
+{"Time":"2026-10-15T09:26:17.953011-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestSelfTradePrevention","Output":"=== RUN   TestSelfTradePrevention\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:17.953031-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestSelfTradePrevention","Output":"--- PASS: TestSelfTradePrevention (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:17.953036-07:00","Action":"pass","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestSelfTradePrevention","Elapsed":0}
+{"Time":"2026-10-15T09:26:17.953061-07:00","Action":"run","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestConcurrent"}
+{"Time":"2026-10-15T09:26:17.953068-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestConcurrent","Output":"=== RUN   TestConcurrent\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:17.959018-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestConcurrent","Output":"--- PASS: TestConcurrent (0.01s)\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:17.959039-07:00","Action":"pass","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestConcurrent","Elapsed":0.01}
+{"Time":"2026-10-15T09:26:17.959059-07:00","Action":"run","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestCancelPartial"}
+{"Time":"2026-10-15T09:26:17.959064-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestCancelPartial","Output":"=== RUN   TestCancelPartial\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:17.959077-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestCancelPartial","Output":"--- PASS: TestCancelPartial (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:17.959089-07:00","Action":"pass","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Test":"TestCancelPartial","Elapsed":0}
+{"Time":"2026-10-15T09:26:17.959106-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Output":"PASS\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:18.042253-07:00","Action":"run","Package":"github.com/Sujendra-23/PaperTrade/engine/service","Test":"TestGRPCTradeStream"}
+{"Time":"2026-10-15T09:26:18.042387-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/service","Test":"TestGRPCTradeStream","Output":"=== RUN   TestGRPCTradeStream\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:18.047874-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/service","Test":"TestGRPCTradeStream","Output":"--- PASS: TestGRPCTradeStream (0.01s)\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:18.04806-07:00","Action":"pass","Package":"github.com/Sujendra-23/PaperTrade/engine/service","Test":"TestGRPCTradeStream","Elapsed":0.01}
+{"Time":"2026-10-15T09:26:18.048104-07:00","Action":"run","Package":"github.com/Sujendra-23/PaperTrade/engine/service","Test":"TestIdempotency"}
+{"Time":"2026-10-15T09:26:18.048142-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/service","Test":"TestIdempotency","Output":"=== RUN   TestIdempotency\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:18.048166-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/service","Test":"TestIdempotency","Output":"--- PASS: TestIdempotency (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:18.048172-07:00","Action":"pass","Package":"github.com/Sujendra-23/PaperTrade/engine/service","Test":"TestIdempotency","Elapsed":0}
+{"Time":"2026-10-15T09:26:18.048178-07:00","Action":"run","Package":"github.com/Sujendra-23/PaperTrade/engine/service","Test":"TestReset"}
+{"Time":"2026-10-15T09:26:18.048184-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/service","Test":"TestReset","Output":"=== RUN   TestReset\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:18.048221-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/service","Test":"TestReset","Output":"--- PASS: TestReset (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:18.048238-07:00","Action":"pass","Package":"github.com/Sujendra-23/PaperTrade/engine/service","Test":"TestReset","Elapsed":0}
+{"Time":"2026-10-15T09:26:18.048246-07:00","Action":"run","Package":"github.com/Sujendra-23/PaperTrade/engine/service","Test":"TestCancelIdempotency"}
+{"Time":"2026-10-15T09:26:18.048273-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/service","Test":"TestCancelIdempotency","Output":"=== RUN   TestCancelIdempotency\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:18.048354-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/service","Test":"TestCancelIdempotency","Output":"--- PASS: TestCancelIdempotency (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:18.048403-07:00","Action":"pass","Package":"github.com/Sujendra-23/PaperTrade/engine/service","Test":"TestCancelIdempotency","Elapsed":0}
+{"Time":"2026-10-15T09:26:18.048429-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/service","Output":"PASS\n","OutputType":"frame"}
+{"Time":"2026-10-15T09:26:18.962752-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Output":"ok  \tgithub.com/Sujendra-23/PaperTrade/engine/book\t1.533s\n"}
+{"Time":"2026-10-15T09:26:18.962798-07:00","Action":"pass","Package":"github.com/Sujendra-23/PaperTrade/engine/book","Elapsed":1.533}
+{"Time":"2026-10-15T09:26:19.058961-07:00","Action":"output","Package":"github.com/Sujendra-23/PaperTrade/engine/service","Output":"ok  \tgithub.com/Sujendra-23/PaperTrade/engine/service\t1.225s\n"}
+{"Time":"2026-10-15T09:26:19.059046-07:00","Action":"pass","Package":"github.com/Sujendra-23/PaperTrade/engine/service","Elapsed":1.225}

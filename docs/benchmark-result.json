@@ -1,0 +1,16 @@
+{
+  "arch": "arm64",
+  "elapsed_seconds": 0.453791625,
+  "go_version": "go1.27.0",
+  "gomaxprocs": 10,
+  "logical_cpus": 10,
+  "measured_at": "2026-10-15T16:13:30Z",
+  "orders": 1000000,
+  "orders_per_second": 2203654.595873161,
+  "os": "darwin",
+  "p50_microseconds": 0.292,
+  "p99_microseconds": 1.541,
+  "scope": "single-threaded in-process Engine.Place wall-clock; includes locks, allocation and per-order timing; pre-generated inputs; excludes RPC, ledger, Redis and UI",
+  "seed": 2026,
+  "trades": 747360
+}
