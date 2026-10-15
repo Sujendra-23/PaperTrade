@@ -1,0 +1,291 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.13.9, pytest-9.1.1, pluggy-1.7.0 -- /Users/sujendra/Desktop/Personal - Projects/PaperTrade/api/.venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /Users/sujendra/Desktop/Personal - Projects/PaperTrade/api
+configfile: pyproject.toml
+testpaths: tests
+plugins: anyio-4.15.1
+collecting ... collected 35 items
+
+tests/test_auth.py::test_signup_logout_login_persists_account INFO:papertrade.trading:Recovered 703 engine commands
+INFO:httpx:HTTP Request: POST http://testserver/api/auth/signup "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: GET http://testserver/api/auth/session "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://testserver/api/auth/logout "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/api/snapshot "HTTP/1.1 401 Unauthorized"
+INFO:httpx:HTTP Request: POST http://testserver/api/auth/login "HTTP/1.1 200 OK"
+PASSED
+tests/test_auth.py::test_wrong_password_and_duplicate_username INFO:httpx:HTTP Request: POST http://testserver/api/auth/signup "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/auth/signup "HTTP/1.1 409 Conflict"
+INFO:httpx:HTTP Request: POST http://testserver/api/auth/login "HTTP/1.1 401 Unauthorized"
+PASSED
+tests/test_auth.py::test_guest_isolation INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: GET http://testserver/api/snapshot?account_id=a57f5472-5d07-4b60-adaa-611924465a34 "HTTP/1.1 403 Forbidden"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 403 Forbidden"
+PASSED
+tests/test_auth.py::test_signout_revokes_cookie INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/auth/logout "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/api/auth/session "HTTP/1.1 401 Unauthorized"
+PASSED
+tests/test_auth.py::test_mutation_rejects_foreign_origin INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 403 Forbidden"
+PASSED
+tests/test_auth.py::test_events_are_private INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: GET http://testserver/api/events?limit=1000 "HTTP/1.1 200 OK"
+PASSED
+tests/test_auth.py::test_expired_session_rejected INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: GET http://testserver/api/snapshot "HTTP/1.1 401 Unauthorized"
+PASSED
+tests/test_auth.py::test_logged_out_websocket_rejected PASSED
+tests/test_trading.py::test_account_funded INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: GET http://testserver/api/snapshot?account_id=d8fee445-b4c7-43dc-8ec2-3edfd414f4dd "HTTP/1.1 200 OK"
+PASSED
+tests/test_trading.py::test_limit_requires_price INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+PASSED
+tests/test_trading.py::test_risk[overrides0-Maximum order size] INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+PASSED
+tests/test_trading.py::test_risk[overrides1-within 5%] INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+PASSED
+tests/test_trading.py::test_risk[overrides2-Insufficient available shares] INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+PASSED
+tests/test_trading.py::test_risk[overrides3-buying power] INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+PASSED
+tests/test_trading.py::test_risk[overrides4-Unsupported symbol] INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+PASSED
+tests/test_trading.py::test_risk[overrides5-omit price] INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+PASSED
+tests/test_trading.py::test_position_limit_includes_open_buys INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: GET http://testserver/api/snapshot?account_id=f52f6bcd-a3e7-49b7-add0-9841ac6c328c "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: DELETE http://testserver/api/orders/5af78b5a-7c65-476b-b949-0e21cd4bcab9?account_id=f52f6bcd-a3e7-49b7-add0-9841ac6c328c "HTTP/1.1 200 OK"
+PASSED
+tests/test_trading.py::test_idempotent INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 409 Conflict"
+PASSED
+tests/test_trading.py::test_header_required INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+PASSED
+tests/test_trading.py::test_cancel_releases_cash INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: GET http://testserver/api/snapshot?account_id=f2eec937-a5ce-4881-b977-8e5f01a04aad "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: DELETE http://testserver/api/orders/9635da8b-2278-40c6-86ea-ad530d6d0929?account_id=f2eec937-a5ce-4881-b977-8e5f01a04aad "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/api/snapshot?account_id=f2eec937-a5ce-4881-b977-8e5f01a04aad "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: DELETE http://testserver/api/orders/9635da8b-2278-40c6-86ea-ad530d6d0929?account_id=f2eec937-a5ce-4881-b977-8e5f01a04aad "HTTP/1.1 200 OK"
+PASSED
+tests/test_trading.py::test_fill_and_balanced_ledger INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: GET http://testserver/api/snapshot?account_id=d9d55a02-89f7-475f-ae61-057739fbe030 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/api/reconciliation "HTTP/1.1 200 OK"
+PASSED
+tests/test_trading.py::test_market_ioc_releases_remainder INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: GET http://testserver/api/snapshot?account_id=740852b9-3fc3-4fd8-a796-9042f4184706 "HTTP/1.1 200 OK"
+PASSED
+tests/test_trading.py::test_100_concurrent_never_overspend INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: GET http://testserver/api/snapshot?account_id=667370e6-c412-4538-92ac-c153b7cd577e "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/api/reconciliation "HTTP/1.1 200 OK"
+
+CONCURRENCY: submitted=100 accepted=55 rejected=45 reserved_cents=9922000 available_cents=78000 overspend=0
+PASSED
+tests/test_trading.py::test_engine_restart_replays_open_orders INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:papertrade.trading:Recovered 826 engine commands
+INFO:httpx:HTTP Request: GET http://testserver/api/snapshot?account_id=37facb3e-be1a-4030-8d80-1394c1ae9f31&symbol=NVDA "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: DELETE http://testserver/api/orders/a64767f7-3f93-4799-b850-002928da87b1?account_id=37facb3e-be1a-4030-8d80-1394c1ae9f31 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/api/reconciliation "HTTP/1.1 200 OK"
+PASSED
+tests/test_trading.py::test_crash_after_engine_before_settlement INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:papertrade.trading:Recovered 828 engine commands
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: GET http://testserver/api/reconciliation "HTTP/1.1 200 OK"
+PASSED
+tests/test_trading.py::test_crash_after_fill_before_settlement INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:papertrade.trading:Recovered 831 engine commands
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: GET http://testserver/api/snapshot?account_id=bc41c4ea-6c9d-4112-843e-a810a1368fa1 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/api/reconciliation "HTTP/1.1 200 OK"
+PASSED
+tests/test_trading.py::test_event_cursor INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: GET http://testserver/api/events?limit=2 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/api/events?after=1875&limit=2 "HTTP/1.1 200 OK"
+PASSED
+tests/test_trading.py::test_websocket_snapshot INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+PASSED
+tests/test_trading.py::test_no_cross_account_cancel INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: DELETE http://testserver/api/orders/a21a09c1-0f4f-40ca-bd7e-8149819ebcef?account_id=demo "HTTP/1.1 403 Forbidden"
+PASSED
+tests/test_trading.py::test_reconciliation INFO:httpx:HTTP Request: GET http://testserver/api/reconciliation "HTTP/1.1 200 OK"
+PASSED
+tests/test_trading.py::test_partial_fill_cancel_releases_exact_reservation INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: GET http://testserver/api/snapshot "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: DELETE http://testserver/api/orders/6e555586-4921-45e6-b6fc-9424a4d3f29e "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/api/snapshot "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/api/reconciliation "HTTP/1.1 200 OK"
+PASSED
+tests/test_trading.py::test_sell_reservation_prevents_oversell_and_releases INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 422 Unprocessable Entity"
+INFO:httpx:HTTP Request: DELETE http://testserver/api/orders/f7c1e805-2957-41b2-b1f8-ff6be2760ef1 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: GET http://testserver/api/reconciliation "HTTP/1.1 200 OK"
+PASSED
+tests/test_trading.py::test_concurrent_same_key_executes_once INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: GET http://testserver/api/snapshot "HTTP/1.1 200 OK"
+PASSED
+tests/test_trading.py::test_market_partial_cancels_unfilled_reservation INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: GET http://testserver/api/snapshot "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/api/reconciliation "HTTP/1.1 200 OK"
+PASSED
+tests/test_trading.py::test_sell_fill_realizes_pnl INFO:httpx:HTTP Request: POST http://testserver/api/auth/guest "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: POST http://testserver/api/orders "HTTP/1.1 201 Created"
+INFO:httpx:HTTP Request: GET http://testserver/api/snapshot "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/api/reconciliation "HTTP/1.1 200 OK"
+PASSED
+
+=============================== warnings summary ===============================
+.venv/lib/python3.13/site-packages/fastapi/testclient.py:1
+  /Users/sujendra/Desktop/Personal - Projects/PaperTrade/api/.venv/lib/python3.13/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /Users/sujendra/Desktop/Personal - Projects/PaperTrade/docs/python-tests.xml -
+======================== 35 passed, 1 warning in 2.24s =========================

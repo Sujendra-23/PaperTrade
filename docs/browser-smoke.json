@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "checks": [
+    "guest session",
+    "live WebSocket",
+    "market buy",
+    "limit order",
+    "cancel releases reservation",
+    "depth price selection",
+    "risk error",
+    "portfolio",
+    "activity reconciliation",
+    "desktop overflow",
+    "mobile overflow",
+    "signup",
+    "logout",
+    "login persistence",
+    "cross-account isolation",
+    "no browser exceptions"
+  ],
+  "measured_at": "2026-10-15T16:30:47.773Z"
+}
